@@ -1,0 +1,8 @@
+CREATE TABLE patroli
+(
+    id_patroli INT NOT NULL AUTO_INCREMENT,
+    waktu DATETIME NOT NULL,
+    lokasi VARCHAR(50) NOT NULL,
+    foto VARCHAR(100) NOT NULL,
+    
+)
