@@ -1,6 +1,7 @@
 CREATE TABLE patroli
 (
     id_patroli INT NOT NULL AUTO_INCREMENT,
+    kode VARCHAR(25) NOT NULL,
     nama VARCHAR(20) NOT NULL,
     waktu DATETIME NOT NULL,
     shift VARCHAR(1) NOT NULL,
