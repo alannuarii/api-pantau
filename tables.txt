@@ -8,5 +8,25 @@ CREATE TABLE patroli
     lokasi VARCHAR(50) NOT NULL,
     foto VARCHAR(100) NOT NULL,
     catatan VARCHAR(250) NOT NULL,
-    PRIMARY KEY (id_patroli)
+    PRIMARY KEY (id_patroli),
+    UNIQUE INDEX kode_lokasi_unique (kode, lokasi)
+);
+
+
+CREATE TABLE note_patroli
+(
+    id_npatroli INT NOT NULL AUTO_INCREMENT,
+    kode VARCHAR(25) NOT NULL,
+    waktu DATETIME NOT NULL,
+    kondisi VARCHAR(250) NOT NULL,
+    PRIMARY KEY (id_npatroli)
+)
+
+CREATE TABLE presensi
+(
+    id_presensi INT NOT NULL AUTO_INCREMENT,
+    nama VARCHAR(20) NOT NULL,
+    shift VARCHAR(1) NOT NULL,
+    waktu DATETIME NOT NULL,
+    PRIMARY KEY (id_presensi)
 )
