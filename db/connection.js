@@ -9,4 +9,13 @@ const db = mysql.createConnection({
   connectionLimit: 10,
 });
 
+// Check Database Connection
+db.connect((error) => {
+  if (error) {
+    console.error("Koneksi ke database gagal: ", error);
+  } else {
+    console.log("Koneksi ke database berhasil terhubung");
+  }
+});
+
 module.exports = db;
