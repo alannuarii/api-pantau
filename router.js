@@ -12,7 +12,7 @@ router.post("/post/patroli/insert-note-patroli", patroli.insertNotePatroli);
 
 // Presensi
 router.post("/post/presensi/insert-presensi", presensi.insertPresensi);
-router.get("/get/presensi/get-piket/:shift", presensi.getPiket);
+router.get("/get/presensi/get-piket/:data", presensi.getPiket);
 
 // Tamu
 router.post("/post/tamu/insert-tamu", tamu.insertTamu);

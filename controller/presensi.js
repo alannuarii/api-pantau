@@ -1,5 +1,5 @@
 const db = require("../db/connection");
-const { getDatetime } = require("../utils/datetime");
+const { getTanggal } = require("../utils/datetime");
 
 const { promisify } = require("util");
 const dbQuery = promisify(db.query).bind(db);
@@ -19,10 +19,10 @@ const insertPresensi = async (req, res) => {
 
 const getPiket = async (req, res) => {
   try {
-    const { shift } = req.params;
-    const tanggal = getDatetime().slice(0, 10);
-    const sql = "SELECT nama FROM presensi WHERE shift = ? LIMIT 1";
-    const values = [shift];
+    const { data } = req.params;
+    const param = data.split("-");
+    const sql = "SELECT nama FROM presensi WHERE shift = ? AND DATE(waktu) = ?";
+    const values = [param[0], getTanggal(parseInt(param[1]))];
     const result = await dbQuery(sql, values);
     res.status(200).json({ message: "Berhasil", data: result });
   } catch (error) {
