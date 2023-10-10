@@ -20,7 +20,7 @@ const insertPresensi = async (req, res) => {
 const getPiket = async (req, res) => {
   try {
     const { data } = req.params;
-    const param = data.split("-");
+    const param = data.split("_");
     const sql = "SELECT nama FROM presensi WHERE shift = ? AND DATE(waktu) = ?";
     const values = [param[0], param[1]];
     const result = await dbQuery(sql, values);
