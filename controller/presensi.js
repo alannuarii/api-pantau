@@ -23,7 +23,7 @@ const getPiket = async (req, res) => {
     const param = data.split("-");
     const sql = "SELECT nama FROM presensi WHERE shift = ? AND DATE(waktu) = '2023-10-10'";
     // const sql = "SELECT nama FROM presensi WHERE shift = ? AND DATE(waktu) = ?";
-    const values = ['s'];
+    const values = ['s', getTanggal(parseInt(param[1]))];
     const result = await dbQuery(sql, values);
     res.status(200).json({ message: "Berhasil", data: result });
   } catch (error) {
