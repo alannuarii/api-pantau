@@ -30,3 +30,14 @@ CREATE TABLE presensi
     waktu DATETIME NOT NULL,
     PRIMARY KEY (id_presensi)
 )
+
+CREATE TABLE tamu 
+(
+    id_tamu INT NOT NULL AUTO_INCREMENT,
+    nama VARCHAR(50) NOT NULL,
+    instansi VARCHAR(75) NOT NULL,
+    nohp VARCHAR(15),
+    tujuan VARCHAR(250) NOT NULL,
+    foto VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id_tamu)
+)
