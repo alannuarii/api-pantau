@@ -12,4 +12,6 @@ const getDatetime = () => {
   // Contoh keluaran: "2023-09-03 10:21:39"
 };
 
+console.log(getDatetime())
+
 module.exports = { getDatetime };
