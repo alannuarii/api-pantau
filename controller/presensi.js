@@ -1,5 +1,4 @@
 const db = require("../db/connection");
-const { getTanggal } = require("../utils/datetime");
 
 const { promisify } = require("util");
 const dbQuery = promisify(db.query).bind(db);
