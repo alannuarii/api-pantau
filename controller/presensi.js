@@ -21,8 +21,8 @@ const getPiket = async (req, res) => {
   try {
     const { shift } = req.params;
     const tanggal = getDatetime().slice(0, 10);
-    const sql = "SELECT nama FROM presensi WHERE shift = ? AND DATE(waktu) = ?";
-    const values = [shift, tanggal];
+    const sql = "SELECT nama FROM presensi WHERE shift = ? LIMIT 1";
+    const values = [shift];
     const result = await dbQuery(sql, values);
     res.status(200).json({ message: "Berhasil", data: result });
   } catch (error) {
